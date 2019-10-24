@@ -1,0 +1,14 @@
+<div class="edit-wrapper">
+    <h1>{{title}}</h1>
+    <div class="from-group" *ngFor="let item of field">
+        <label >{{item}}: </label>
+        <input [(id)] = "item" *ngIf="item != 'Rating'" [(ngModel)]="book[item.toLowerCase()]">
+        <p-rating *ngIf="item === 'Rating'" [(ngModel)]= "book[item.toLowerCase()]" stars="5" [cancel]="false" >
+        
+        </p-rating>
+        
+    </div>
+    <div>
+        <button class="save" pButton (click)="addBook()" type="button" label="Add new book" ></button>
+    </div>
+</div>

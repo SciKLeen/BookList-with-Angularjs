@@ -1,0 +1,30 @@
+.edit-wrapper{
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    border-radius: 4px 4px 4px 4px;
+    // float: right;
+    margin: 0 auto;
+    width: 30%;
+    .from-group{
+        // background: red;
+        width: 300px;
+        padding: 20px;
+        text-align: center;
+        margin: 0 auto;
+        label{
+            float: left;
+            margin: 5px;
+        }
+        input{
+            float: right;
+            margin: 5px;
+        }
+        #Rating{
+            margin: 0 auto;
+        }
+        .save{
+            margin: 20px;
+        }
+    }
+}

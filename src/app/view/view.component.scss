@@ -1,0 +1,55 @@
+.searchbar-wrapper{
+    background: lightblue;
+    padding: 20px;
+    text-align: center;
+    padding: 0 auto;
+    .search-wraper{
+        margin: 0 auto;
+        // align-items: center;
+        // text-align: center;
+        background: grey;
+        width: 40em;
+        // padding: 10px;
+        border-radius: 8px;
+        .search{
+            width: 500px;
+            height: 30px;
+            margin: 10px;
+            border-radius: 8px 0px 0px 8px;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            margin: 10px 10px 0px 0px;
+            border-radius: 0px 8px 8px 0px;
+        }
+    }
+    .condition-wraper{
+        padding: 10px;
+        // float: left;
+        div{
+            display: inline-block;
+            padding: 10px;
+            p-checkbox{
+                margin: 5px;
+            }
+            margin: 0 auto;
+        }
+    }
+}
+.add-book{
+    float: right;
+    padding: 3px;
+    margin: 10px;
+    background: white;
+    border-radius: 8px;
+    button{
+        border-radius: 8px;
+    }
+}
+
+.view-list{
+    p-table{
+        border-radius: 8px;
+    }
+}
