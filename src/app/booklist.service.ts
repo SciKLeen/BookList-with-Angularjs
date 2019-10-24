@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { listbooks } from './Databook';
 import { Books } from './books'
 
@@ -27,5 +27,4 @@ export class BookService {
     getSize(){
         return this.lstbook.length
     }
-
 }

@@ -1,29 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { Output, EventEmitter } from '@angular/core';
-// import { ConsoleReporter } from 'jasmine';
+export class TableStateDemo implements OnInit {
 
-@Component({
-  selector: 'app-output',
-  templateUrl: './output.component.html',
-  styleUrls: ['./output.component.css']
-})
-export class OutputComponent implements OnInit {
+  cars1: Car[];
 
-  @Output() newItemEvent: any;
-  event: EventEmitter<any>;
+  cars2: Car[];
 
-  addNewItem(value: string) {
-    // this.newItemEvent.emit(value);
-    this.newItemEvent = value
-    // alert(this.newItemEvent)
-    this.event.emit(this.newItemEvent);
-  }
+  cols: any[];
 
+  selectedCar1: Car;
 
-  constructor() { }
+  selectedCar2: Car;
+
+  constructor(private carService: CarService) { }
 
   ngOnInit() {
-    this.event = new EventEmitter
-  }
+      this.carService.getCarsMedium().then(cars => this.cars1 = cars);
+      this.carService.getCarsMedium().then(cars => this.cars2 = cars);
 
+      this.cols = [
+          { field: 'vin', header: 'Vin' },
+          { field: 'year', header: 'Year' },
+          { field: 'brand', header: 'Brand' },
+          { field: 'color', header: 'Color' }
+      ];
+  }
+ 
 }

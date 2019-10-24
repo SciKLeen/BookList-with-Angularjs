@@ -1,39 +1,36 @@
 <div class="root">
     <div class = "searchbar-wrapper">
-            <H1>Search-area works!</H1>
-            <div class="search-wraper">
-                <input #searchContent class="search" type="text" pInputText />
-                <button pButton type="button" (click)="searchTable(searchContent.value)" label="Click"  ></button>
-            </div>
-            <div class="condition-wraper">
-                <div *ngFor="let item of typeBook"> <p-checkbox binary="bookType[item]" value="item" [(ngModel)]="bookType[item]"></p-checkbox><b>{{item}}</b></div>
-            </div>
+        <div class="search-wraper">
+            <input #searchContent class="search" type="text" pInputText />
+            <button pButton type="button" (click)="searchTable(searchContent.value)" label="Click"  ></button>
         </div>
-        <div class="view-list">
-            <h1>View-area works!</h1>
-            <p-table [value]="books" selectionMode="single" (onRowSelect)="show()">
-                <ng-template pTemplate="header">    
-                    <tr>
-                        <th *ngFor= "let field of fields">{{ field }}</th>
-                    </tr>
-                </ng-template>
-                <ng-template pTemplate="body" let-book>
-                    <tr [pSelectableRow]="book" routerLink="/bookediter/{{book.no}}">
-                        <td>{{book.no}}</td>
-                        <td>{{book.type}}</td>
-                        <td>{{book.name}}</td>
-                        <td>{{book.author}}</td>
-                        <td>
-                            <p-rating [ngModel]= "book.rating" readonly="true" stars="5" [cancel]="false">
-        
-                            </p-rating>
-                        </td>
-                    </tr>
-                </ng-template>
-            </p-table>
+        <div class="condition-wraper">
+            <div *ngFor="let item of typeBook"> <p-checkbox binary="bookType[item]" value="item" [(ngModel)]="bookType[item]"></p-checkbox><b>{{item}}</b></div>
         </div>
-        <div class="add-book" type="button" label="Click">
-            <!-- <a [routerLink]="['/bookediter']">Add new book</a> -->
-            <button pButton [routerLink]="['/bookediter/']" type="button" label="Add new book" ></button>
-        </div>
+    </div>
+    <div class="view-list">
+        <p-table [value]="books" [columns]="cols" [rows]="5" [resizableColumns]="true" [reorderableColumns]="true" [columns]="field" [paginator]="true" selectionMode="single" (onRowSelect)="show()">
+            <ng-template pTemplate="header">    
+                <tr>
+                    <th *ngFor= "let field of fields">{{ field }}</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-book>
+                <tr [pSelectableRow]="book" routerLink="/bookediter/{{book.no}}">
+                    <td>{{book.no}}</td>
+                    <td>{{book.type}}</td>
+                    <td>{{book.name}}</td>
+                    <td>{{book.author}}</td>
+                    <td>
+                        <p-rating [ngModel]= "book.rating" readonly="true" stars="5" [cancel]="false">
+    
+                        </p-rating>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <div class="add-book" type="button" label="Click">
+        <button pButton [routerLink]="['/bookediter/']" type="button" label="Add new book" ></button>
+    </div>
 </div>
