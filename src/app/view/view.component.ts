@@ -16,6 +16,7 @@ export class ViewComponent implements OnInit {
   
   lstbook : Books[]
   books : Books[];
+  
   cols : any[]
 
   ngOnInit() {
@@ -25,6 +26,16 @@ export class ViewComponent implements OnInit {
       }
     )
     this.books = this.lstbook
+
+
+
+    this.cols = [
+      { field: 'no', header: 'No' },
+      { field: 'type', header: 'Type' },
+      { field: 'name', header: 'Name' },
+      { field: 'author', header: 'Author' },
+      { field: 'rating', header: 'Rating' }
+    ];
   }
 
   // ---------------------------------- field ---------------------------------- //
@@ -61,5 +72,8 @@ export class ViewComponent implements OnInit {
   editBook(){
     this.location.go("/bookediter/")
   }
-
+  resert(){
+    this.books = this.bookservice.getDefault()
+    console.log(this.books, this.bookservice.getDefault())
+  }
 }

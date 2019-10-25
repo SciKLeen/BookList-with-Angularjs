@@ -4,15 +4,21 @@
             <input #searchContent class="search" type="text" pInputText />
             <button pButton type="button" (click)="searchTable(searchContent.value)" label="Click"  ></button>
         </div>
+        <button  type="button" (click)=(resert())>resert</button>
         <div class="condition-wraper">
             <div *ngFor="let item of typeBook"> <p-checkbox binary="bookType[item]" value="item" [(ngModel)]="bookType[item]"></p-checkbox><b>{{item}}</b></div>
         </div>
     </div>
     <div class="view-list">
-        <p-table [value]="books" [columns]="cols" [rows]="5" [resizableColumns]="true" [reorderableColumns]="true" [columns]="field" [paginator]="true" selectionMode="single" (onRowSelect)="show()">
+        <p-table [value]="books" [columns]="cols" [rows]="5" [paginator]="true" selectionMode="single" (onRowSelect)="show()">
             <ng-template pTemplate="header">    
                 <tr>
-                    <th *ngFor= "let field of fields">{{ field }}</th>
+                    <th *ngFor= "let col of cols" 
+                        [pSortableColumn]="col.field === 'name' || col.field === 'no' ? col.field : null" 
+                    >
+                        {{col.header}}
+                        <p-sortIcon *ngIf="col.field === 'name' || col.field === 'no'" [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+                    </th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-book>
