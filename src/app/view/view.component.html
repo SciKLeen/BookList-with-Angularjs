@@ -4,7 +4,6 @@
             <input #searchContent class="search" type="text" pInputText />
             <button pButton type="button" (click)="searchTable(searchContent.value)" label="Click"  ></button>
         </div>
-        <button  type="button" (click)=(resert())>resert</button>
         <div class="condition-wraper">
             <div *ngFor="let item of typeBook"> <p-checkbox binary="bookType[item]" value="item" [(ngModel)]="bookType[item]"></p-checkbox><b>{{item}}</b></div>
         </div>

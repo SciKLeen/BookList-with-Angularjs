@@ -27,7 +27,6 @@ export class BookediterComponent implements OnInit {
 
   ngOnInit() {
     if(this.id){
-      console.log()
       this.bookservice.getBooks().subscribe(
         (book) =>{
           this.listbook = book;
@@ -43,18 +42,10 @@ export class BookediterComponent implements OnInit {
   selectedValues = true
   rating: number = 2;
 
-
-
-
-  // @Output() newItemEvent = new EventEmitter<string>();
-
   addBook(){
-    console.log(this.id)
-
     if(!this.id)
     {
       this.book.no = this.bookservice.getSize() + 1
-      // this.listbook.push(this.book)
       this.bookservice.addBook(this.book)
     }
     else{

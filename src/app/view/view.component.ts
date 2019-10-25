@@ -2,7 +2,6 @@ import { Component, OnInit} from '@angular/core';
 import { Books } from '../books'
 import { BookService } from '../booklist.service';
 import { Location } from '@angular/common'
-// import { listenerCount } from 'cluster';
 
 @Component({
   templateUrl: './view.component.html',
@@ -10,14 +9,13 @@ import { Location } from '@angular/common'
 })
 export class ViewComponent implements OnInit {
   constructor(
-    private bookservice:BookService,
-    private location:Location
+    private bookservice: BookService,
+    private location: Location
   ) { }
-  
-  lstbook : Books[]
-  books : Books[];
-  
-  cols : any[]
+
+  lstbook: Books[];
+  books: Books[];
+  cols: any[];
 
   ngOnInit() {
     this.bookservice.getBooks().subscribe(
@@ -26,8 +24,6 @@ export class ViewComponent implements OnInit {
       }
     )
     this.books = this.lstbook
-
-
 
     this.cols = [
       { field: 'no', header: 'No' },
@@ -74,6 +70,5 @@ export class ViewComponent implements OnInit {
   }
   resert(){
     this.books = this.bookservice.getDefault()
-    console.log(this.books, this.bookservice.getDefault())
   }
 }

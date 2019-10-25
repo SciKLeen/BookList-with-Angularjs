@@ -6,7 +6,7 @@ import { ViewComponent } from './view/view.component';
 
 
 const routes: Routes = [
-  { path: '',redirectTo:'/view' ,pathMatch:'full' },
+  { path: '', redirectTo: '/view', pathMatch: 'full' },
   { path: 'bookediter', component: BookediterComponent },
   { path: 'bookediter/:id', component: BookediterComponent },
   { path: 'view', component: ViewComponent }
