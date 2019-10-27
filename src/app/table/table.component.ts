@@ -4,10 +4,10 @@ import { BookService } from '../booklist.service';
 import { Location } from '@angular/common'
 
 @Component({
-  templateUrl: './view.component.html',
-  styleUrls: ['./view.component.scss']
+  templateUrl: './table.component.html',
+  styleUrls: ['./table.component.scss']
 })
-export class ViewComponent implements OnInit {
+export class TableComponent implements OnInit {
   constructor(
     private bookservice: BookService,
     private location: Location

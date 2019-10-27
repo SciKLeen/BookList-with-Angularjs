@@ -20,5 +20,12 @@ export var listbooks: Books[] = [
         "name": 'Harry potter',
         "author": 'Hoang Minh',
         "rating": 3
+    },
+    {
+        no: 4,
+        type: "Novel",
+        name: "Sekiro",
+        author: "Minh",
+        rating: 5
     }
 ]

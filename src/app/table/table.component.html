@@ -1,15 +1,18 @@
 <div class="root">
-    <div class = "searchbar-wrapper">
-        <div class="search-wraper">
-            <input #searchContent class="search" type="text" pInputText />
-            <button pButton type="button" (click)="searchTable(searchContent.value)" label="Click"  ></button>
-        </div>
-        <div class="condition-wraper">
-            <div *ngFor="let item of typeBook"> <p-checkbox binary="bookType[item]" value="item" [(ngModel)]="bookType[item]"></p-checkbox><b>{{item}}</b></div>
-        </div>
-    </div>
-    <div class="view-list">
+    <div class="table-list">
         <p-table [value]="books" [columns]="cols" [rows]="5" [paginator]="true" selectionMode="single" (onRowSelect)="show()">
+            <ng-template pTemplate="caption" let-rowData>
+                <h1> Skilearn Book List </h1>
+                <div class = "searchbar-wrapper">
+                    <div class="search-wraper">
+                        <input #searchContent class="search" type="text" pInputText />
+                        <p-button label="Search" type="button" (click)="searchTable(searchContent.value)" ></p-button>
+                    </div>
+                    <div class="condition-wraper">
+                        <div *ngFor="let item of typeBook"> <p-checkbox binary="bookType[item]" value="item" [(ngModel)]="bookType[item]"></p-checkbox><b>{{item}}</b></div>
+                    </div>
+                </div>
+            </ng-template>  
             <ng-template pTemplate="header">    
                 <tr>
                     <th *ngFor= "let col of cols" 
@@ -33,9 +36,11 @@
                     </td>
                 </tr>
             </ng-template>
+            <ng-template pTemplate="summary" let-rowData>
+                <div class="add-book" type="button" label="Click">
+                    <button pButton [routerLink]="['/bookediter/']" type="button" label="Add new book" ></button>
+                </div>
+            </ng-template>   
         </p-table>
-    </div>
-    <div class="add-book" type="button" label="Click">
-        <button pButton [routerLink]="['/bookediter/']" type="button" label="Add new book" ></button>
     </div>
 </div>

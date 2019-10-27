@@ -1,0 +1,51 @@
+.search-wraper{
+    margin: 0 auto;
+    background: grey;
+    width: 45em;
+    padding: 10px 0px 10px 0px; 
+    border-radius: 8px;
+    .search{
+        width: 500px;
+        height: 30px;
+        // margin: 10px;
+        border-radius: 8px 0px 0px 8px;
+    }
+    
+    p-button{
+        margin-left: 10px;
+        // border: solid white 3px;
+        // text-align: center;
+        // .ui-corner-all{
+        //     border-radius: 10px;
+        // }
+    }
+}
+.condition-wraper{
+    padding: 10px;
+    div{
+        display: inline-block;
+        padding: 10px;
+        p-checkbox{
+            margin: 5px;
+        }
+        margin: 0 auto;
+    }
+}
+th {
+    color: white !important;
+    background-color: #700000 !important;
+}
+.add-book{
+    padding: 3px;
+    border-radius: 8px;
+    text-align: right;
+    button{
+        border: 3px solid white;
+        border-radius: 8px;
+    }
+}
+.table-list{
+    p-table{
+        border-radius: 8px;
+    }
+}

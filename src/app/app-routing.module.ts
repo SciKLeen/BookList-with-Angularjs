@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 // import { CommonModule } from '@angular/common';
 import { RouterModule, Routes} from '@angular/router';
 import { BookediterComponent } from './bookediter/bookediter.component';
-import { ViewComponent } from './view/view.component';
+import { TableComponent } from './table/table.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/view', pathMatch: 'full' },
+  { path: '', redirectTo: '/table', pathMatch: 'full' },
   { path: 'bookediter', component: BookediterComponent },
   { path: 'bookediter/:id', component: BookediterComponent },
-  { path: 'view', component: ViewComponent }
+  { path: 'table', component: TableComponent }
 ];
 
 @NgModule({

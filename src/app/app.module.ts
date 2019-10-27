@@ -9,13 +9,13 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BookediterComponent } from './bookediter/bookediter.component';
-import { ViewComponent } from './view/view.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookediterComponent,
-    ViewComponent
+    TableComponent
   ],
   imports: [
     BrowserModule,

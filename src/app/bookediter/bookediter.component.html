@@ -1,14 +1,23 @@
 <div class="edit-wrapper">
-    <h1>{{title}}</h1>
-    <div class="from-group" *ngFor="let item of field">
-        <label >{{item}}: </label>
-        <input [(id)] = "item" *ngIf="item != 'Rating'" [(ngModel)]="book[item.toLowerCase()]">
-        <p-rating *ngIf="item === 'Rating'" [(ngModel)]= "book[item.toLowerCase()]" stars="5" [cancel]="false" >
-        
-        </p-rating>
-        
+    <h1 style="text-align:center;">{{title}}</h1>
+    <div class="from-group" *ngFor="let item of field">   
+        <span class="ui-float-label" *ngIf="item != 'Rating'">
+            <input pInputText size="40px" id = "{{item}}" [(ngModel)]="book[item.toLowerCase()]">
+            <label for="float-input">{{item}}</label>
+        </span>
+        <div><p-rating *ngIf="item === 'Rating'" [(ngModel)]= "book[item.toLowerCase()]" 
+                stars="5" [cancel]="true" ></p-rating>
+        </div>
     </div>
     <div>
         <button class="save" pButton (click)="addBook()" type="button" label="Add new book" ></button>
     </div>
 </div>
+
+<!--
+<form #form="ngForm"> 
+    <label for="cc">Credit Card</label> 
+    <input id="cc" type="text" name="cc" [(ngModel)]="cc" pInputText [pKeyFilter]="ccRegex" [pValidateOnly]="true" placeholder="1234-1234-1234-1234">
+    <p-message severity="error" text="Not a valid number" [@errorState]="form.dirty && !form.valid ? 'visible' : 'hidden'"></p-message>
+</form>
+-->

@@ -43,6 +43,7 @@ export class BookediterComponent implements OnInit {
   rating: number = 2;
 
   addBook(){
+    console.log("add");
     if(!this.id)
     {
       this.book.no = this.bookservice.getSize() + 1
