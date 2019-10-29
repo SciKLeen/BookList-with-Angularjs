@@ -10,12 +10,16 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BookediterComponent } from './bookediter/bookediter.component';
 import { TableComponent } from './table/table.component';
+import {MultiSelectModule} from 'primeng/multiselect';
+import { DropListComponent } from './drop-list/drop-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookediterComponent,
-    TableComponent
+    TableComponent,
+    DropListComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,9 @@ import { TableComponent } from './table/table.component';
     TableModule,
     CheckboxModule,
     RatingModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MultiSelectModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

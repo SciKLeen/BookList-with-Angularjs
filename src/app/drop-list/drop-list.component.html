@@ -1,0 +1,23 @@
+<!-- <p-multiSelect [options]="cars" [(ngModel)]="selectedCars1" [panelStyle]="{minWidth:'12em'}"></p-multiSelect>
+<br>
+
+<p-multiSelect [options]="items" [(ngModel)]="item" [panelStyle]="{minWidth:'12em'}" [virtualScroll]="true" [filter]="true" [itemSize]="34">
+
+
+</p-multiSelect> -->
+
+<br>
+
+<p-multiSelect [options]="constacts" [(ngModel)]="selectedContacts" [panelStyle]="{minWidth:'12em'}">
+    <ng-template let-selectedCars pTemplate="selectedItems">
+        <span *ngIf="selectedContacts.length === 0">Select Contact</span>
+        <span *ngIf="selectedContacts.length != 0">{{selectedContacts.length}}  Items selected     
+        </span>
+    </ng-template>
+    <ng-template let-car let-i="index" pTemplate="item">
+        {{i}}
+        <span class="name">{{car.value.name}} </span>
+        <div style="font-size:14px;float:right;margin-top:4px">{{car.value.group}}</div>
+    </ng-template>
+</p-multiSelect>
+<p>Selected Cars: <b>{{selectedContacts}}</b></p>

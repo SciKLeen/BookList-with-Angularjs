@@ -35,7 +35,7 @@ export class TableComponent implements OnInit {
   }
 
   // ---------------------------------- field ---------------------------------- //
-  fields = ['No', "Type", "Name", "Author", "Rating"]
+  fields = ['No', 'Type', 'Name', 'Author', 'Rating'];
   typeBook: string[] = ['SGK', 'English', "Novel"];
   // ------------------------------- List checkbox ----------------------------------- //
   bookType = {SGK: true, English: true, Novel: true};

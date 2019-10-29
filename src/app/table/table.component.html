@@ -42,5 +42,11 @@
                 </div>
             </ng-template>   
         </p-table>
+        <div class="add-condition">
+            <!-- <b>{{'ADVANCED_ROUTES.FROM_GREOUP_OF_CONTACT_IN_PERSONAL_DIRECTORY' | translate}}</b> -->
+            <p-multiSelect [options]="cities1" [(ngModel)]="selectedCities1"></p-multiSelect>
+
+            <p-multiSelect [options]="cities2" [(ngModel)]="selectedCities2" optionLabel="name"></p-multiSelect>
+        </div>
     </div>
 </div>
