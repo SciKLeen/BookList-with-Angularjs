@@ -9,9 +9,9 @@ import { of } from 'rxjs';
 })
 export class BookService {
   constructor() { }
-  // books: Books[] = listbooks.filter(x => x.no !== null);
-  books: Books[] = localStorage.getItem('books') === null ? [] : 
-                    JSON.parse(localStorage.getItem('books') );
+  books: Books[] = listbooks.filter(x => x.no !== null);
+  // books: Books[] = localStorage.getItem('books') === null ? [] : 
+  //                   JSON.parse(localStorage.getItem('books') );
 
   getBooks(): Observable<Books[]> {
     return of(JSON.parse(localStorage.getItem('books')));

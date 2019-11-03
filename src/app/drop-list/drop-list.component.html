@@ -8,7 +8,7 @@
 
 <br>
 
-<p-multiSelect [options]="constacts" [(ngModel)]="selectedContacts" [panelStyle]="{minWidth:'12em'}">
+<p-multiSelect [options]="constacts" (onClick) = "checkClick($even)" [(ngModel)]="selectedContacts" [panelStyle]="{minWidth:'12em'}">
     <ng-template let-selectedCars pTemplate="selectedItems">
         <span *ngIf="selectedContacts.length === 0">Select Contact</span>
         <span *ngIf="selectedContacts.length != 0">{{selectedContacts.length}}  Items selected     

@@ -23,6 +23,7 @@
     "font-awesome": "^4.7.0",
     "movies": "^1.0.0",
     "ng": "0.0.0",
+    "pnotify": "^4.0.0",
     "primeicons": "^2.0.0",
     "primeng": "^8.0.4",
     "rxjs": "~6.4.0",
