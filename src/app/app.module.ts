@@ -13,13 +13,15 @@ import { TableComponent } from './table/table.component';
 import {MultiSelectModule} from 'primeng/multiselect';
 import { DropListComponent } from './drop-list/drop-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookediterComponent,
     TableComponent,
-    DropListComponent
+    DropListComponent,
+    // LoadingComponent
   ],
   imports: [
     BrowserModule,

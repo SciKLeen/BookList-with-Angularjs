@@ -58,17 +58,17 @@ export class TableComponent implements OnInit {
         if(  (this.bookType.SGK && element.type === "SGK")
           || (this.bookType.English && element.type === "English")
           || (this.bookType.Novel && element.type === "Novel")
-          ){
-            lst.push(element)
-          }  
+          ) {
+            lst.push(element);
+          }
       }
     });
-    this.books = lst
+    this.books = lst;
   }
   editBook(){
-    this.location.go("/bookediter/")
+    this.location.go('/bookediter/')
   }
-  resert(){
+  resert() {
     this.books = this.bookservice.getDefault()
   }
 }
