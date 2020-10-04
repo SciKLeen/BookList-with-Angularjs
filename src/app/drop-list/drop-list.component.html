@@ -8,16 +8,17 @@
 
 <br>
 
-<p-multiSelect [options]="constacts" [(ngModel)]="selectedContacts" filterPlaceHolder="Search personal contact" [panelStyle]="{minWidth:'20em'}">
-    <ng-template let-selectedCars pTemplate="selectedItems">
-        <span *ngIf="selectedContacts.length === 0">Select Contact</span>
-        <span *ngIf="selectedContacts.length != 0">{{selectedContacts.length}}  Items selected     
-        </span>
-    </ng-template>
-    <ng-template let-car let-i="index" pTemplate="item" >
-        {{i}}
-        <span class="name">{{car.value.name}} </span>
-        <div style="font-size:14px;float:right;margin-top:4px">{{car.value.group}}</div>
-    </ng-template>
+<p-multiSelect [options]="constacts" [(ngModel)]="selectedContacts" filterPlaceHolder="Search personal contact"
+  [panelStyle]="{minWidth:'20em'}">
+  <ng-template let-selectedCars pTemplate="selectedItems">
+    <span *ngIf="selectedContacts.length === 0">Select Contact</span>
+    <span *ngIf="selectedContacts.length != 0">{{selectedContacts.length}} Items selected
+    </span>
+  </ng-template>
+  <ng-template let-car let-i="index" pTemplate="item">
+    {{i}}
+    <span class="name">{{car.value.name}} </span>
+    <div style="font-size:14px;float:right;margin-top:4px">{{car.value.group}}</div>
+  </ng-template>
 </p-multiSelect>
 <p>Selected Cars: <b>{{selectedContacts}}</b></p>

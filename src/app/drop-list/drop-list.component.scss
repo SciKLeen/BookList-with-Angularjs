@@ -1,34 +1,38 @@
 :host ::ng-deep .ui-multiselected-item-token,
 :host ::ng-deep .ui-multiselected-empty-token {
-    padding: 2px 4px;
-    margin: 0 0.286em 0 0;
-    display: inline-block;
-    vertical-align:middle;
-    height: 1.857em;
-    width:200px;
+  padding: 2px 4px;
+  margin: 0 0.286em 0 0;
+  display: inline-block;
+  vertical-align: middle;
+  height: 1.857em;
+  width: 200px;
 }
+
 :host ::ng-deep .ui-multiselected-item-token {
-    background: #007ad9;
-    color: #ffffff;
+  background: #007ad9;
+  color: #ffffff;
 }
+
 :host ::ng-deep .ui-multiselected-empty-token {
-    background: #d95f00;
-    color: #ffffff;
+  background: #d95f00;
+  color: #ffffff;
 }
 
 
-:host ::ng-deep .ui-multiselect-panel .ui-multiselect-header .ui-multiselect-filter-container .ui-inputtext{
-    padding-left: 2.5em;
-}
-:host ::ng-deep .ui-multiselect-panel .ui-multiselect-header .ui-multiselect-filter-container .ui-multiselect-filter-icon{
-    color: #e90575;
-    left: 0.5em;
-    right: auto;
-}
-:host ::ng-deep .ui-multiselect .ui-multiselect-label-container{
-    width:20em;
+:host ::ng-deep .ui-multiselect-panel .ui-multiselect-header .ui-multiselect-filter-container .ui-inputtext {
+  padding-left: 2.5em;
 }
 
-:host ::ng-deep ui-multiselect-open{
-    width: 20em;
+:host ::ng-deep .ui-multiselect-panel .ui-multiselect-header .ui-multiselect-filter-container .ui-multiselect-filter-icon {
+  color: #e90575;
+  left: 0.5em;
+  right: auto;
+}
+
+:host ::ng-deep .ui-multiselect .ui-multiselect-label-container {
+  width: 20em;
+}
+
+:host ::ng-deep ui-multiselect-open {
+  width: 20em;
 }

@@ -1,17 +1,18 @@
 .loading_block {
-    z-index: 2000;
-    background: #e90575;
-    margin-bottom: 42px;
-    color: white;
-    border-radius: 6px;
+  z-index: 2000;
+  background: #e90575;
+  margin-bottom: 42px;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  padding: 8px 14px 8px 8px;
+  display: inline-block;
+
+  span {
+    float: right;
+    margin-top: 15px;
+    padding-left: 10px;
+    text-align: center;
     font-weight: bold;
-    padding: 8px 14px 8px 8px;
-    display: inline-block;
-    span {
-        float: right;
-        margin-top: 15px;
-        padding-left: 10px;
-        text-align: center;
-        font-weight: bold;
-    }
+  }
 }

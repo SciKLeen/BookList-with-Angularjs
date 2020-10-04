@@ -1,17 +1,17 @@
 <div class="edit-wrapper">
-    <h1 style="text-align:center;">{{title}}</h1>
-    <div class="from-group" *ngFor="let item of field">   
-        <span class="ui-float-label" *ngIf="item != 'Rating'">
-            <input pInputText size="40px" id = "{{item}}" [(ngModel)]="book[item.toLowerCase()]">
-            <label for="float-input">{{item}}</label>
-        </span>
-        <div><p-rating *ngIf="item === 'Rating'" [(ngModel)]= "book[item.toLowerCase()]" 
-                stars="5" [cancel]="true" ></p-rating>
-        </div>
-    </div>
+  <h1 style="text-align:center;">{{title}}</h1>
+  <div class="from-group" *ngFor="let item of field">
+    <span class="ui-float-label" *ngIf="item != 'Rating'">
+      <input pInputText size="40px" id="{{item}}" [(ngModel)]="book[item.toLowerCase()]">
+      <label for="float-input">{{item}}</label>
+    </span>
     <div>
-        <button class="save" pButton (click)="addBook()" type="button" label="Add new book" ></button>
+      <p-rating *ngIf="item === 'Rating'" [(ngModel)]="book[item.toLowerCase()]" stars="5" [cancel]="true"></p-rating>
     </div>
+  </div>
+  <div>
+    <button class="save" pButton (click)="addBook()" type="button" label="Add new book"></button>
+  </div>
 </div>
 
 <!--

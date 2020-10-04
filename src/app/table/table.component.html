@@ -1,53 +1,56 @@
 <div class="root">
-    <div class="table-list">
-        <p-table [value]="books" [columns]="cols" [rows]="5" [paginator]="true" selectionMode="single" (onRowSelect)="show()">
-            <ng-template pTemplate="caption" let-rowData>
-                <h1> Skilearn Book List </h1>
-                <div class = "searchbar-wrapper">
-                    <div class="search-wraper">
-                        <input #searchContent class="search" type="text" pInputText />
-                        <p-button label="Search" type="button" (click)="searchTable(searchContent.value)" ></p-button>
-                    </div>
-                    <div class="condition-wraper">
-                        <div *ngFor="let item of typeBook"> 
-                            <p-checkbox binary="bookType[item]" value="item" [(ngModel)]="bookType[item]">
-                                
-                            </p-checkbox><b>{{item}}</b></div>
-                    </div>
-                </div>
-            </ng-template>  
-            <ng-template pTemplate="header">    
-                <tr>
-                    <th *ngFor= "let col of cols" 
-                        [pSortableColumn]="col.field === 'name' || col.field === 'no' ? col.field : null" 
-                    >
-                        {{col.header}}
-                        <p-sortIcon *ngIf="col.field === 'name' || col.field === 'no'" [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
-                    </th>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-book>
-                <tr [pSelectableRow]="book" routerLink="/bookediter/{{book.no}}">
-                    <td>{{book.no}}</td>
-                    <td>{{book.type}}</td>
-                    <td>{{book.name}}</td>
-                    <td>{{book.author}}</td>
-                    <td>
-                        <p-rating [ngModel]= "book.rating" disabled="true" stars="5" [cancel]="false">
-    
-                        </p-rating>
-                    </td>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="summary" let-rowData>
-                <div class="add-book" type="button" label="Click">
-                    <button pButton [routerLink]="['/bookediter/']" type="button" label="Add new book" ></button>
-                </div>
-            </ng-template>   
-        </p-table>
-        <!-- <div class="add-condition">
+  <div class="table-list">
+    <p-table [value]="books" [columns]="cols" [rows]="5" [paginator]="true" selectionMode="single"
+      (onRowSelect)="show()">
+      <ng-template pTemplate="caption" let-rowData>
+        <h1> Skilearn Book List </h1>
+        <div class="searchbar-wrapper">
+          <div class="search-wraper">
+            <input #searchContent class="search" type="text" pInputText />
+            <p-button label="Search" type="button" (click)="searchTable(searchContent.value)"></p-button>
+          </div>
+          <div class="condition-wraper">
+            <div *ngFor="let item of typeBook">
+              <p-checkbox binary="bookType[item]" value="item" [(ngModel)]="bookType[item]">
+
+              </p-checkbox><b>{{item}}</b>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th *ngFor="let col of cols"
+            [pSortableColumn]="col.field === 'name' || col.field === 'no' ? col.field : null">
+            {{col.header}}
+            <p-sortIcon *ngIf="col.field === 'name' || col.field === 'no'" [field]="col.field"
+              ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
+              ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-book>
+        <tr [pSelectableRow]="book" routerLink="/bookediter/{{book.no}}">
+          <td>{{book.no}}</td>
+          <td>{{book.type}}</td>
+          <td>{{book.name}}</td>
+          <td>{{book.author}}</td>
+          <td>
+            <p-rating [ngModel]="book.rating" disabled="true" stars="5" [cancel]="false">
+
+            </p-rating>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div class="add-book" type="button" label="Click">
+          <button pButton [routerLink]="['/bookediter/']" type="button" label="Add new book"></button>
+        </div>
+      </ng-template>
+    </p-table>
+    <!-- <div class="add-condition">
             <p-multiSelect [options]="cities1" [(ngModel)]="selectedCities1"></p-multiSelect>
             <p-multiSelect [options]="cities2" [(ngModel)]="selectedCities2" optionLabel="name"></p-multiSelect>
         </div> -->
-    </div>
+  </div>
 </div>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 // import { CommonModule } from '@angular/common';
-import { RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { BookediterComponent } from './bookediter/bookediter.component';
 import { TableComponent } from './table/table.component';
 import { DropListComponent } from './drop-list/drop-list.component';
